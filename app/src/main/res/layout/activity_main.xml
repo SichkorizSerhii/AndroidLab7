@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity"
+    android:background="@color/euGold">
+
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введіть назву ліків"
+        android:inputType="text"
+        android:textColor="@color/euBlue"
+        android:textColorHint="@color/euBlue"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSearch"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/euGold"
+        android:backgroundTint="@color/euBlue"
+        android:text="Пошук"/>
+
+    <ListView
+        android:id="@+id/listViewDrugs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buttonSearch"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/euBlue" />
+
+</RelativeLayout>
