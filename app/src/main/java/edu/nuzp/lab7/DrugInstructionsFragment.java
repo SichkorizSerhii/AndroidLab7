@@ -31,5 +31,3 @@ public class DrugInstructionsFragment extends Fragment {
         return view;
     }
 }
-
-
