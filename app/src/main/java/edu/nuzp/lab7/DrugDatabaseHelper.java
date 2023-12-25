@@ -29,10 +29,10 @@ public class DrugDatabaseHelper extends SQLiteOpenHelper {
         insertDrug(db, "Парацетамол");
         insertDrug(db, "Аспірин");
         insertDrug(db,"Ібупрофен");
-        insertDrug(db,"Цитрамон-Дарниця");
-        insertDrug(db,"Анальгін-Дарниця");
+        insertDrug(db,"Цитрамон");
+        insertDrug(db,"Анальгін");
         insertDrug(db,"Нурофєн");
-        insertDrug(db,"Но-шпа");
+        insertDrug(db,"Ношпа");
         insertDrug(db,"Амізон");
         insertDrug(db,"Терафлю");
         insertDrug(db,"Німесил");

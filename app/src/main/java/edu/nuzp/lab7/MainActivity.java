@@ -1,6 +1,5 @@
 package edu.nuzp.lab7;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
@@ -61,6 +60,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void showDrugDetails(String selectedDrug) {
+        DrugInstructionsFragment drugInstructionsFragment = new DrugInstructionsFragment();
+        Bundle args = new Bundle();
+        args.putString(DrugInstructionsFragment.ARG_DRUG_NAME, selectedDrug);
+        drugInstructionsFragment.setArguments(args);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, drugInstructionsFragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
     private void populateListView() {
         adapter.clear();
         Cursor cursor = dbHelper.getDrugsCursor();
@@ -70,43 +81,4 @@ public class MainActivity extends AppCompatActivity {
         }
         cursor.close();
     }
-
-    private void showDrugDetails(String drugName) {
-        Intent intent = null;
-        switch (drugName) {
-            case "Парацетамол":
-                intent = new Intent(this, ParacetamolDetailsActivity.class);
-                break;
-            case "Аспірин":
-                intent = new Intent(this, AspirinDetailsActivity.class);
-                break;
-            case "Ібупрофен":
-                intent = new Intent(this, IbuprofenDetailsActivity.class);
-                break;
-            case "Цитрамон-Дарниця":
-                intent = new Intent(this, CitramonDetailsActivity.class);
-                break;
-            case "Анальгін-Дарниця":
-                intent = new Intent(this, AnalginDetailsActivity.class);
-                break;
-            case "Нурофєн":
-                intent = new Intent(this, NyrofenDetailsActivity.class);
-                break;
-            case "Но-шпа":
-                intent = new Intent(this, NoshpaDetailsActivity.class);
-                break;
-            case "Амізон":
-                intent = new Intent(this, AmizonDetailsActivity.class);
-                break;
-            case "Терафлю":
-                intent = new Intent(this, TerafluDetailsActivity.class);
-                break;
-            case "Німесил":
-                intent = new Intent(this, NimesilDetailsActivity.class);
-                break;
-            default:
-        }
-        startActivity(intent);
-    }
-
 }
